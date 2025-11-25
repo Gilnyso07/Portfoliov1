@@ -52,7 +52,7 @@
       </div>
     </div>
 
-    <section class="projects">
+     <!-- <section class="projects">
       <div class="project-grid">
         <a href="ui-ux.html" class="project-card">
           <img class="project-thumb" src="Laptop.png" alt="UI/UX Design project thumbnail">
@@ -69,7 +69,61 @@
           <h3>Social Design</h3>
         </a>
       </div>
-    </section>
+    </section> 
+    -->
+
+   <section class="gallery">
+    <script>
+      const gallery = document.querySelector('.gallery');
+      const imageCount = 17;
+      const folder = 'Masonry gallery v1';
+
+      const overlayTexts = [
+        "B2B App Onboarding Screens", // text for image 1
+        "StudentAlpha Social Media", // text for image 2
+        "", // text for image 3
+        "Illustrations", // text for image 4
+        "Nationaal Archief VR Experience", // text for image 5
+        "Tool for Low Health Literacy", // no text for image 6
+        "", // text for image 7
+        "InteractionLab Branding", // text for image 8
+        "DocuWiki UI/UX", // text for image 9
+        "", // no text for image 10
+        "PickWise UI/UX", // text for image 11
+        "Motion Graphics Showreel", // text for image 12
+        "Mascot Design", // text for image 13
+        "MusicAll UI/UX", // no text for image 14
+        "", // text for image 15
+        "Twente Canal Workshop", // text for image 16
+        "GreenHub Twente Animation" // text for image 17
+      ];
+
+      for (let i = 1; i <= imageCount; i++) {
+        const link = document.createElement('a');
+        link.href = `${folder}/image${i}.png`;
+        if ([3, 7, 10, 15].includes(i)) {
+            link.className = 'gallery-item no-hover';
+          } else {
+            link.className = 'gallery-item';
+}
+
+        const img = document.createElement('img');
+        img.src = `${folder}/image${i}.png`;
+        img.alt = `Gallery image ${i}`;
+        link.appendChild(img);
+
+        const text = overlayTexts[i - 1];
+        if (text) {
+          const overlayText = document.createElement('span');
+          overlayText.className = 'overlay-text';
+          overlayText.textContent = text;
+          link.appendChild(overlayText);
+        }
+
+        gallery.appendChild(link);
+      }
+    </script>
+  </section>
 
   <footer>
     <p>© 2025 Noa Barneveld</p>
