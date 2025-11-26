@@ -141,6 +141,7 @@ main {
   z-index: 2;
 }
 
+/*remove the linear gradient on mobile*/
 .logos:before {
   left: 0;
   background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
@@ -306,11 +307,12 @@ main {
   }
 }
 
+/*
 @media (max-width: 500px) {
   .gallery {
     column-count: 1;
   }
-}
+}]*/
 
 .gallery-item {
   position: relative;
