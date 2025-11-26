@@ -523,8 +523,42 @@ body.modal-open {
 }
 
 .external-icon {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2em;
+  height: 1.2em;
+  margin-left: 6px;
+  font-size: 1rem;
+  border: 2px solid #fff;      /* white outline */
+  border-radius: 4px;          /* slight rounding */
+  line-height: 1;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* ===== Contact Section ===== */
+.contact-buttons {
+  display: flex;
+  justify-content: left;   /* centers them horizontally */
+  align-items: center;       /* vertically aligns them */
+  gap: 2.5rem;               /* space between buttons */
+  margin-top: 2rem;
+}
+
+.contact-button {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+}
+
+.contact-icon {
+  width: 280px;    /* adjust size to fit your design */
+  height: auto;
+  cursor: pointer;
 }
 
 
