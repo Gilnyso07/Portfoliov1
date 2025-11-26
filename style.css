@@ -204,9 +204,10 @@ main {
   font-size: 36px;
 }
 
-.subtitle {
-  color: rgb(0, 0, 0);
-  font-weight: 400;
+.sub-title {
+  color: rgb(112, 112, 112);
+  font-weight: 200;
+  font-size: 15px;
   margin-bottom: 0.5rem;
 }
 
