@@ -458,7 +458,7 @@ body.modal-open {
   max-width: 1000px;
   margin: 0 auto;
   margin-top: 2rem;
-  text-align: left;
+  /* text-align: left; */
 }
 
 /* Spacing tweaks for About section */
@@ -508,19 +508,18 @@ body.modal-open {
   color: #858585;
   font-weight: 500;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 /* - Map Section - */
-.about-map {
-  text-align: center;
-  margin-top: 4rem;
-}
 
-.map-image {
-  width: 100%;
-  max-width: 700px;
+.about-map {
+  width: 70%;
+  max-width: 800px;
   border-radius: 20px;
   margin-bottom: 1rem;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Responsive adjustments */
@@ -595,7 +594,7 @@ body.modal-open {
 }
 
 .contact-icon {
-  width: 280px;    /* adjust size to fit your design */
+  width: 200px;    /* adjust size to fit your design */
   height: auto;
   cursor: pointer;
 }
@@ -603,10 +602,10 @@ body.modal-open {
 @media (max-width: 600px) {
   .contact-buttons {
     flex-direction: column;
-    gap: 1rem;
+    gap: 32px;
   }
   .contact-icon {
-    width: 220px;    /* adjust size for smaller screens */
+    width: 180px;    /* adjust size for smaller screens */
   }
 }
 
