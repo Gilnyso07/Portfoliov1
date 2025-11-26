@@ -10,13 +10,15 @@
 <body>
 
   <header>
-    <a href="/" class="logo logo--fixed" aria-label="Noa Barneveld home">
-      <img src="LogoRedBlue.png" alt="Noa Barneveld logo" />
-    </a>
+    <!--
+      <a href="/" class="logo logo--fixed" aria-label="Noa Barneveld home">
+       <img src="LogoRedBlue.png" alt="Noa Barneveld logo" />
+        </a>
+    -->
     <nav>
-      <a href="#">Work</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#">work</a>
+      <a href="#">about</a>
+      <a href="#">contact</a>
     </nav>
   </header>
 
@@ -25,7 +27,7 @@
         <div class="profile-image"></div>
         <div class="intro-text">
           <h2 class="title">Multidisciplinary Designer</h2>
-          <h3 class="subtitle">An analytical creative at the crossroads of UI/UX, motion design and graphic design.</h3>
+          <p>An analytical designer blending UI/UX, motion, and graphic design to create seamless, functional, and aesthetic experiences.</p>
         </div>
       </section>
 
@@ -158,7 +160,7 @@
       "PDFs/DocuWiki.pdf",                   // image 9
       "",                                    // image 10
       "PDFs/PickWise.pdf",                   // image 11
-      "PDFs/Showreel.pdf",                   // image 12
+      "https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD",                   // image 12
       "TBD.pdf",                             // image 13
       "PDFs/MusicAll.pdf",                   // image 14
       "",                                    // image 15
@@ -187,10 +189,19 @@
         event.preventDefault();
         const link = projectLinks[index];
         if (link) {
-          iframe.src = link;
           document.getElementById("pdf-loader").style.display = "block";
           modal.style.display = 'flex';
-          document.body.classList.add('modal-open'); // add this
+          document.body.classList.add('modal-open');
+
+          // Check for YouTube link and format it for embed
+          if (link.includes("youtube.com") || link.includes("youtu.be")) {
+            const youtubeEmbed = link
+              .replace("watch?v=", "embed/")
+              .replace("youtu.be/", "www.youtube.com/embed/");
+            iframe.src = youtubeEmbed;
+          } else {
+            iframe.src = link;
+          }
         }
       });
     });
@@ -201,6 +212,53 @@
       }, 600); // delay in milliseconds
     });
   </script>
+
+<!-- ===== About ===== -->
+<section id="about" class="about">
+  <h2 class="title">A little bit more about me</h2>
+  <p>I bring academic and professional experience in design and technology: </p>
+  <!--<p>with a focus on creating user-centered solutions.</p>-->
+
+  <a href="PDFs/CV2025v5.pdf" target="_blank" class="cv-button">
+    View CV <span class="external-icon">↗</span>
+  </a>
+  
+  <p>And an adventurous multicultural personality:</p>
+
+  <div class="about-gallery">
+    <div class="about-item">
+      <img src="About/Mountainlover.png" alt="Mountain lover" class="about-image" />   
+      <p class="caption">Mountain lover</p>
+    </div>
+
+    <div class="about-item">
+      <img src="About/Coldwaterswimmer.png" alt="Cold water swimmer" class="about-image" />
+      <p class="caption">Cold water swimmer</p>
+    </div>
+
+    <div class="about-item">
+      <img src="About/Explorer.png" alt="Explorer" class="about-image" />
+      <p class="caption">Explorer</p>
+    </div>
+  </div>
+
+  <div class="about-map">
+      <img src="About/Map.png" alt="Map" class="about-image" />
+    <p class="caption">Grew up and studied across Europe</p>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact" class="about">
+  <h2 class="title">Get in touch</h2>
+  <p>If you'd like to discuss a project, collaboration, or just want to say hello, feel free to reach out!</p>
+  <a href="mailto:replace@replace.com" class="contact-button">
+    <img src="Contact/Email.png" alt="Email" class="about-image" />   
+  </a>
+  <a href="https://www.linkedin.com/in/noabarneveld/" target="_blank" class="contact-button">
+    <img src="Contact/LinkedIn.png" alt="LinkedIn" class="about-image" />
+  </a>
+</section>
 
   <footer>
     <p>© 2025 Noa Barneveld</p>
