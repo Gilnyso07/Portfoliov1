@@ -1,0 +1,80 @@
+/* ===== About Section ===== */
+.about {
+  padding: 3.5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center
+}
+
+/* Spacing tweaks for About section */
+.about .title {
+  margin-bottom: 1rem; /* space between heading and text */
+}
+
+.about p {
+  margin: 0 auto 0 auto; /* centers the block horizontally */
+  text-align: left;      /* aligns text within it to the left */
+  max-width: 500px;
+}
+
+.about .cv-button {
+  margin: 1rem 0 2.5rem; /* space above and below the button */
+}
+
+/* - About images - */
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  align-items: start;
+}
+
+.about-item {
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 0rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caption {
+  font-size: 1rem;
+  color: #858585;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* - Map Section - */
+
+.about-map {
+  width: 70%;
+  max-width: 800px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-gallery {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-image {
+    border-radius: 15px;
+  }
+
+  .map-image {
+    border-radius: 15px;
+  }
+}

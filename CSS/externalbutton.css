@@ -1,0 +1,32 @@
+/* ===== Reusable Button Component ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #4b7392;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 3px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.button:hover {
+  background: #395a73;
+  transform: scale(1.05);
+}
+
+/* Use Material Symbols icon for external links */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: 1rem;
+  line-height: 1;
+  margin-left: 4px;
+}

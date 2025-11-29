@@ -1,0 +1,106 @@
+
+/* ===== Client Logo carousel ===== */
+@keyframes slide{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos{
+  overflow: hidden;
+  padding: 30px 0; /* space around the sliding logos (top + bottom, left + right) */
+  white-space: nowrap;
+  position: relative;
+  @media (max-width: 600px) {
+    .logos-slide img {
+      height: 40px;
+      margin: 0 30px; /* adjust spacing for smaller screens */
+    }
+  }
+}
+
+.logos:before, 
+.logos:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  content: "";
+  z-index: 2;
+}
+
+/*remove the linear gradient on mobile*/
+.logos:before {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused; /* pause animation on hover */
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 50s slide infinite linear;
+}
+
+.logos-slide img{
+  height: 60px;
+  margin: 0 50px; /* space between logos */
+}
+
+/* ===== Landing Section ===== */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 2rem 2rem;
+}
+
+.profile-image {
+  width: clamp(320px, 30vw, 320px);
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  margin: 20px;
+  overflow: hidden;
+  display: block;
+
+  background-image: url('../Images/Header/IMG_6814.jpeg');
+  background-size: cover;
+  background-position: 50% 80%; /* moved down: 50% = center horizontally, 60% = slightly lower vertically */
+  background-repeat: no-repeat;
+}
+
+.title {
+  color: #FE736C;
+  margin-bottom: 0.5rem;
+  font-size: 36px;
+}
+
+.sub-title {
+  color: rgb(112, 112, 112);
+  font-weight: 200;
+  font-size: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text {
+  max-width: 500px;
+}

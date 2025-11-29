@@ -1,0 +1,59 @@
+
+
+/* ===== Navigation ===== */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 3rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 40px;
+  width: fit-content;
+  margin: 1.5rem auto 0 auto; /* adds space above and centers it */
+  position: sticky;
+  top: 1rem; /* leave space between top and nav */
+  z-index: 1000;
+  /*box-shadow: 0 8px 20px rgba(0,0,0,0.1);*/
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+nav {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 500px) {
+  nav {
+    gap: 1.5rem;
+  }
+  nav a{
+    min-width: 16px;
+  }
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 20px;
+  display: inline-block;                  /* allow transform without affecting layout */
+  transition: color 0.1s ease, transform 160ms cubic-bezier(.2,.9,.2,1);
+  transform-origin: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav a:hover {
+  color: var(--accent);
+  transform: scale(1.04);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}

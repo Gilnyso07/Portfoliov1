@@ -1,0 +1,69 @@
+/* CV-button styles */
+
+.cv-button {
+  background-color: #4b7392;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 12px 36px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cv-button:hover {
+  background-color: #395a73;
+  transform: scale(1.03);
+}
+
+.external-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2em;
+  height: 1.2em;
+  margin-left: 6px;
+  font-size: 1rem;
+  border: 2px solid #fff;      /* white outline */
+  border-radius: 4px;          /* slight rounding */
+  line-height: 1;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===== Contact Section ===== */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.contact-button {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+}
+
+.contact-icon {
+  width: 200px;    /* adjust size to fit your design */
+  height: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .contact-buttons {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .contact-icon {
+    width: 180px;    /* adjust size for smaller screens */
+  }
+}
