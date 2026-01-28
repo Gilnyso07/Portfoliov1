@@ -55,7 +55,7 @@
 
 .logos-slide {
   display: inline-block;
-  animation: 50s slide infinite linear;
+  animation: 150s slide infinite linear;
 }
 
 .logos-slide img{
