@@ -1,6 +1,6 @@
 /* ===== About Section ===== */
 .about {
-  padding: 3.5rem 2rem;
+  padding: 2rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center
@@ -27,7 +27,7 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2.5rem;
   margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   align-items: start;
 }
 
@@ -53,8 +53,7 @@
 }
 
 /* - Map Section - */
-
-.about-map {
+/*.about-map {
   width: 70%;
   max-width: 800px;
   border-radius: 20px;
@@ -74,7 +73,7 @@
     border-radius: 15px;
   }
 
-  .map-image {
+  /*.map-image {
     border-radius: 15px;
-  }
+  }*/
 }

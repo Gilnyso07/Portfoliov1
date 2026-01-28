@@ -1,33 +1,72 @@
 /* ===== Masonry Gallery ===== */
-.gallery img {
-  width: 100%;
-  margin-bottom:20px;
-}
-
 .gallery {
-  column-count: 3;
-  column-gap: 20px;
-  padding: 70px;
+  padding: 30px;
   border-radius: 30px;
 }
 
-@media (max-width: 768px) {
-  .gallery {
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.filter-btn {
+  font-size: 18px;
+  padding: 10px 40px;
+  border: 2px solid #ede7e7;
+  background: #ffffff;
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-btn:hover {
+  transform: scale(1.);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.filter-btn.is-active {
+  background: var(--accent2);
+  color: #ffffff;
+  border-color: var(--accent2);
+  /* box-shadow: 0 8px 24px rgba(70, 125, 163, 0.35); */
+}
+
+.gallery-grid {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
     column-count: 2;
   }
 }
 
-/*
-@media (max-width: 500px) {
-  .gallery {
+@media (max-width: 560px) {
+  .gallery-grid {
     column-count: 1;
   }
-}]*/
+}
 
 .gallery-item {
   position: relative;
-  display: inline-block;
+  display: block;
   overflow: hidden;
+  break-inside: avoid;
+}
+
+.gallery-item.is-hidden {
+  display: none !important;
 }
 
 /* Overlay */
@@ -54,23 +93,25 @@
 
 .gallery-item .overlay-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
   color: #000000;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: normal;
   opacity: 0;
   transition: opacity 0.3s ease;
-  text-align: left;
+  text-align: center;
   pointer-events: none;
   z-index: 3; /* ensure text sits above the semi-transparent overlay */
 }
 
 .gallery-item:not(.no-hover):hover img {
   opacity: 0.4;
-  transform: scale(1.05);
+  transform: none;
 }
 
 .gallery-item:not(.no-hover):hover .overlay-text {

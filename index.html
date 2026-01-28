@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Noa Joan | Portfolio</title>
+  <title> Noa Barneveld | Portfolio</title>
   <link rel="icon" type="image/png" href="Favicon.png" />
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=open_in_new" />
@@ -28,9 +28,9 @@
     <section id="hero">
         <div class="profile-image"></div>
         <div class="intro-text">
-          <subtitle class="sub-title">Noa Joan</subtitle>
-          <h2 class="title">Multidisciplinary Designer</h2>
-          <p>An analytical designer blending UI/UX, motion, and graphic design to create seamless, functional, and aesthetic experiences.</p>
+          <!--<subtitle class="sub-title">Noa Barneveld</subtitle>-->
+          <h2 class="title">Noa Barneveld</h2>
+          <h3>Multidisciplinary designer simplifying complex processes and products using creative power</h3>
         </div>
     </section>
 
@@ -45,17 +45,17 @@
         <img src="Images/Client logo's Website/Billd logo.png" alt="Logo 5">
         <img src="Images/Client logo's Website/Barnfield.png" alt="Logo 8">
       </div>
-      <div class="logos-slide">
-        <img src="Images/Client logo's Website/Cocon marketing.png" alt="Logo 1">
-        <img src="Images/Client logo's Website/HIP hout is practtig.webp" alt="Logo 4">
-        <img src="Images/Client logo's Website/logo-university-of-twente.png" alt="Logo 3">
-        <img src="Images/Client logo's Website/TIG logo.png" alt="Logo 6">
-        <img src="Images/Client logo's Website/ESA.png" alt="Logo 2">
-        <img src="Images/Client logo's Website/Movilab.png" alt="Logo 7">
-        <img src="Images/Client logo's Website/Billd logo.png" alt="Logo 5">
-        <img src="Images/Client logo's Website/Barnfield.png" alt="Logo 8">
-      </div>
+    <div class="logos-slide">
+      <img src="Images/Client logo's Website/Cocon marketing.png" alt="Logo 1">
+      <img src="Images/Client logo's Website/HIP hout is practtig.webp" alt="Logo 4">
+      <img src="Images/Client logo's Website/logo-university-of-twente.png" alt="Logo 3">
+      <img src="Images/Client logo's Website/TIG logo.png" alt="Logo 6">
+      <img src="Images/Client logo's Website/ESA.png" alt="Logo 2">
+      <img src="Images/Client logo's Website/Movilab.png" alt="Logo 7">
+      <img src="Images/Client logo's Website/Billd logo.png" alt="Logo 5">
+      <img src="Images/Client logo's Website/Barnfield.png" alt="Logo 8">
     </div>
+  </div>
 
      <!-- <section class="projects">
       <div class="project-grid">
@@ -78,55 +78,61 @@
     -->
 
    <section id="work" class="gallery">
+    <div class="filter-bar" aria-label="Filter work by discipline">
+      <button class="filter-btn is-active" data-filter="all">All work</button>
+      <button class="filter-btn" data-filter="graphic">Graphic design</button>
+      <button class="filter-btn" data-filter="motion">Motion design</button>
+      <button class="filter-btn" data-filter="uxui">UX/UI</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+      <button class="filter-btn" data-filter="xr">XR</button>
+    </div>
+    <div class="gallery-grid"></div>
+
     <script>
-      const gallery = document.querySelector('.gallery');
-      const imageCount = 17;
+      const galleryGrid = document.querySelector('.gallery-grid');
       const folder = 'Images/Masonry gallery v1';
 
-      const overlayTexts = [
-        "B2B App Onboarding Screens", // text for image 1
-        "StudentAlpha Social Media", // text for image 2
-        "", // text for image 3
-        "Illustrations", // text for image 4
-        "Nationaal Archief VR Experience", // text for image 5
-        "Tool for Low Health Literacy", // no text for image 6
-        "", // text for image 7
-        "InteractionLab Branding", // text for image 8
-        "DocuWiki UI/UX", // text for image 9
-        "", // no text for image 10
-        "PickWise UI/UX", // text for image 11
-        "Motion Graphics Showreel", // text for image 12
-        "Mascot Design", // text for image 13
-        "MusicAll UI/UX", // no text for image 14
-        "", // text for image 15
-        "Twente Canal Workshop", // text for image 16
-        "GreenHub Twente Animation" // text for image 17
+      const workItems = [
+        { file: 'image1.png', overlay: 'B2B App Onboarding Screens', project: 'PDFs/BilldB2B-Slides.pdf', categories: ['uxui', 'research'] },
+        { file: 'image2.png', overlay: 'StudentAlpha Social Media', project: 'PDFs/StudentAlpha.pdf', categories: ['graphic'] },
+        { file: 'image3.png', overlay: 'TIG text', project: '', categories: [''] },
+        { file: 'image4.png', overlay: 'Illustrations', project: 'PDFs/Illustrations.pdf', categories: ['graphic'] },
+        { file: 'image5.png', overlay: 'Nationaal Archief VR Experience', project: 'PDFs/NationalArchive.pdf', categories: ['xr'] },
+        { file: 'image6.png', overlay: 'Tool for Low Health Literacy', project: 'PDFs/Thesis.pdf', categories: ['research', 'uxui'] },
+        { file: 'image7.png', overlay: 'ESA text', project: '', categories: [''] },
+        { file: 'image8.png', overlay: 'InteractionLab Branding', project: 'PDFs/InteractionLabPortfolio.pdf', categories: ['graphic'] },
+        { file: 'image9.png', overlay: 'DocuWiki UI/UX', project: 'PDFs/DocuWiki.pdf', categories: ['uxui'] },
+        { file: 'image10.png', overlay: 'Jimmy text', project: '', categories: [''] },
+        { file: 'image11.png', overlay: 'PickWise UI/UX', project: 'PDFs/PickWise.pdf', categories: ['uxui'] },
+        { file: 'image12.png', overlay: 'Motion Graphics Showreel', project: 'https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD', categories: ['motion'] },
+        { file: 'image13.png', overlay: 'Mascot Design', project: 'PDFs/BilldMascot.pdf', categories: ['graphic'] },
+        { file: 'image14.png', overlay: 'MusicAll UI/UX', project: 'PDFs/MusicAll.pdf', categories: ['uxui'] },
+        { file: 'image15.png', overlay: 'Houtisprachtig', project: '', categories: [''] },
+        { file: 'image16.png', overlay: 'Twente Canal Workshop', project: 'PDFs/Twentekanaal.pdf', categories: ['research'] },
+        { file: 'image17.png', overlay: 'GreenHub Twente Animation', project: 'PDFs/GreenHub.pdf', categories: ['motion'] }
       ];
 
-      for (let i = 1; i <= imageCount; i++) {
+      workItems.forEach((item, index) => {
         const link = document.createElement('a');
-        link.href = `${folder}/image${i}.png`;
-        if ([3, 7, 10, 15].includes(i)) {
-            link.className = 'gallery-item no-hover';
-          } else {
-            link.className = 'gallery-item';
-}
+        link.href = `${folder}/${item.file}`;
+        link.className = [3, 7, 10, 15].includes(index + 1) ? 'gallery-item no-hover' : 'gallery-item';
+        link.dataset.tags = item.categories.join(',');
+        link.dataset.project = item.project;
 
         const img = document.createElement('img');
-        img.src = `${folder}/image${i}.png`;
-        img.alt = `Gallery image ${i}`;
+        img.src = `${folder}/${item.file}`;
+        img.alt = item.overlay || `Gallery image ${index + 1}`;
         link.appendChild(img);
 
-        const text = overlayTexts[i - 1];
-        if (text) {
+        if (item.overlay) {
           const overlayText = document.createElement('span');
           overlayText.className = 'overlay-text';
-          overlayText.textContent = text;
+          overlayText.textContent = item.overlay;
           link.appendChild(overlayText);
         }
 
-        gallery.appendChild(link);
-      }
+        galleryGrid.appendChild(link);
+      });
     </script>
   </section>
 
@@ -141,41 +147,37 @@
 
   <!-- ===== JS Modal Overlay ===== -->
   <script>
-    // Select modal and key elements
     const modal = document.getElementById('projectModal');
     const iframe = document.getElementById('projectFrame');
     const closeBtn = document.querySelector('.modal-close');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
     function getScrollbarWidth(){
       return window.innerWidth - document.documentElement.clientWidth;
     }
 
-    // Direct mapping of each image to its PDF (empty string for no project)
-    const projectLinks = [
-      "PDFs/BilldB2B-Slides.pdf",                             // image 1
-      "PDFs/StudentAlpha.pdf",               // image 2
-      "",                                    // image 3
-      "PDFs/Illustrations.pdf",              // image 4
-      "PDFs/NationalArchive.pdf",                             // image 5
-      "PDFs/Thesis.pdf",                     // image 6
-      "",                                    // image 7
-      "PDFs/InteractionLabPortfolio.pdf",    // image 8
-      "PDFs/DocuWiki.pdf",                   // image 9
-      "",                                    // image 10
-      "PDFs/PickWise.pdf",                   // image 11
-      "https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD",                   // image 12
-      "PDFs/BilldMascot.pdf",                             // image 13
-      "PDFs/MusicAll.pdf",                   // image 14
-      "",                                    // image 15
-      "PDFs/Twentekanaal.pdf",                             // image 16
-      "PDFs/GreenHub.pdf"                              // image 17
-    ];
+    const filterWork = (filter) => {
+      galleryItems.forEach(item => {
+        const tags = item.dataset.tags ? item.dataset.tags.split(',') : [];
+        const matches = filter === 'all' || tags.includes(filter);
+        item.classList.toggle('is-hidden', !matches);
+      });
+    };
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('is-active'));
+        button.classList.add('is-active');
+        filterWork(button.dataset.filter);
+      });
+    });
 
     // Close modal when clicking the close button
     closeBtn.addEventListener('click', () => {
       modal.style.display = 'none';
       iframe.src = "";
-      document.body.classList.remove('modal-open'); // add this
+      document.body.classList.remove('modal-open');
     });
     
     // Close modal when clicking outside content
@@ -183,14 +185,14 @@
       if (event.target === modal) {
         modal.style.display = 'none';
         iframe.src = "";
-        document.body.classList.remove('modal-open'); // add this
+        document.body.classList.remove('modal-open');
       }
     });
 
-    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+    galleryItems.forEach((item) => {
       item.addEventListener('click', (event) => {
         event.preventDefault();
-        const link = projectLinks[index];
+        const link = item.dataset.project;
         if (link) {
           document.getElementById("pdf-loader").style.display = "block";
           modal.style.display = 'flex';
@@ -219,13 +221,7 @@
 <!-- ===== About ===== -->
 <section id="about" class="about">
   <h2 class="title">A little bit more about me</h2>
-  <p>I bring academic and professional experience in design and technology:
-    <a href="PDFs/CV2025v5.pdf" target="_blank" class="button">
-      See my CV <span class="material-symbols-outlined">open_in_new</span>
-    </a>
-  </p>
-  <br>
-  <p>And an adventurous multicultural personality:</p>
+  <p>I bring academic and professional experience in design and technology and an adventurous multicultural personality:</p>
 
   <div class="about-gallery">
     <div class="about-item">
@@ -244,10 +240,15 @@
     </div>
   </div>
 
-  <div class="about-item">
+        <a href="PDFs/CV2025v5.pdf" target="_blank" class="button">
+      See my CV <span class="material-symbols-outlined">open_in_new</span>
+    </a>
+
+  <!-- <div class="about-item">
       <img src="Images/About/Map.png" alt="Map" class="about-map" />
     <p class="caption">Grew up and studied across Europe</p>
   </div>
+-->
 </section>
 
 <!-- ===== Contact ===== -->
@@ -258,11 +259,10 @@
       <a href="https://www.linkedin.com/in/noabarneveld/" target="_blank" class="contact-button">
       <img src="Images/Contact/LinkedIn.png" alt="LinkedIn" class="contact-icon" />
    </a>
-    <a href="mailto:replace@replace.com" class="contact-button">
+    <a href="mailto:contact@noajoan.com" class="contact-button">
       <img src="Images/Contact/Email.png" alt="Email" class="contact-icon" />   
     </a>
   </div>
-
 </section>
 
   <footer>
