@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packages | Noa Barneveld</title>
+
+  <link rel="icon" type="image/png" href="../Images/Header/Favicon.png" />
+  <link rel="stylesheet" href="../CSS/global.css" />
+  <link rel="stylesheet" href="../CSS/navigation.css" />
+  <link rel="stylesheet" href="../CSS/externalbutton.css" />
+  <link rel="stylesheet" href="../CSS/packages.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#packages" data-i18n="nav.packages">Packages</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="#process" data-i18n="nav.process">How I work</a>
+    </nav>
+  </header>
+
+  <div class="lang-toggle" role="group" aria-label="Language toggle">
+    <button class="lang-toggle__btn" type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button class="lang-toggle__btn" type="button" data-lang="nl" aria-pressed="false">NL</button>
+  </div>
+
+  <main class="packages-main">
+    <section id="hero" class="packages-hero" aria-labelledby="intro-title">
+      <div class="profile-image" aria-hidden="true"></div>
+      <div class="intro-text">
+        <h1 id="intro-title" class="intro-title" data-i18n="intro.title">Noa Barneveld</h1>
+        <p class="intro-lead" data-i18n="intro.subtitle">
+          creatieveling met een kritische blik, ik kijk mee naar waar jij vastloopt en help dmv animatie, design en webdesign hoe ik je kan helpen informatie helder en leuk te communiceren
+        </p>
+      </div>
+    </section>
+
+    <section class="packages-heading" aria-labelledby="packages-title">
+      <h2 id="packages-title" class="title" data-i18n="hero.title">Packages</h2>
+      <p class="packages-lead" data-i18n="hero.subtitle">
+        Choose a package below. Prices are starting points; we’ll scope your project together.
+      </p>
+    </section>
+
+    <section id="packages" class="packages-grid" aria-label="Package options">
+      <article class="package-card">
+        <div class="package-card__top">
+          <h2 class="package-card__title" data-i18n="p1.title">1-minute animation</h2>
+          <p class="package-card__price" data-i18n="p1.price">From €1000</p>
+        </div>
+        <p class="package-card__desc" data-i18n="p1.desc">
+          Ideal for keynote openings, explainer videos, and social media.
+        </p>
+
+        <ul class="package-card__list">
+          <li data-i18n="p1.b1">1-minute motion piece (concept → delivery)</li>
+          <li data-i18n="p1.b2">Optimized for your channel (keynote / web / social)</li>
+          <li data-i18n="p1.b3">Delivery in high-quality MP4</li>
+        </ul>
+
+        <div class="package-card__actions">
+          <a class="button package-card__btn" href="#contact" data-i18n="p.contactCta">Choose this package</a>
+          <a class="button button--secondary package-card__btn" href="../index.html#work" data-i18n="p.sampleCta">Sample work</a>
+        </div>
+      </article>
+
+      <article class="package-card package-card--featured" aria-label="Branding package">
+        <div class="package-card__top">
+          <h2 class="package-card__title" data-i18n="p2.title">Branding project</h2>
+          <p class="package-card__price" data-i18n="p2.price">From €2000</p>
+        </div>
+        <p class="package-card__desc" data-i18n="p2.desc">
+          A clear visual identity to make your brand consistent and recognizable.
+        </p>
+
+        <ul class="package-card__list">
+          <li data-i18n="p2.b1">Logo design</li>
+          <li data-i18n="p2.b2">Styleguide (incl. colours)</li>
+          <li data-i18n="p2.b3">2 design elements + font selection</li>
+        </ul>
+
+        <div class="package-card__actions">
+          <a class="button package-card__btn" href="#contact" data-i18n="p.contactCta">Choose this package</a>
+          <a class="button button--secondary package-card__btn" href="../index.html#work" data-i18n="p.sampleCta">Sample work</a>
+        </div>
+      </article>
+
+      <article class="package-card">
+        <div class="package-card__top">
+          <h2 class="package-card__title" data-i18n="p3.title">UX/UI analysis</h2>
+          <p class="package-card__price" data-i18n="p3.price">From €2000</p>
+        </div>
+        <p class="package-card__desc" data-i18n="p3.desc">
+          Analysis of your app or website including advice and design suggestions for improvements and design.
+        </p>
+
+        <ul class="package-card__list">
+          <li data-i18n="p3.b1">UX/UI audit of an app or website</li>
+          <li data-i18n="p3.b2">Actionable advice for improvements</li>
+          <li data-i18n="p3.b3">Design suggestions (where helpful)</li>
+        </ul>
+
+        <div class="package-card__actions">
+          <a class="button package-card__btn" href="#contact" data-i18n="p.contactCta">Choose this package</a>
+          <a class="button button--secondary package-card__btn" href="../index.html#work" data-i18n="p.sampleCta">Sample work</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="contact" class="packages-contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
+      <p class="packages-contact__lead" data-i18n="contact.desc">
+        Send a message with your preferred package and some context. I’ll reply with next steps.
+      </p>
+
+      <form class="contact-form" method="post" action="https://formspree.io/f/mqedrvoq">
+        <div class="contact-form__grid">
+          <label class="field">
+            <span class="field__label" data-i18n="contact.name">Name</span>
+            <input class="field__input" type="text" name="name" autocomplete="name" required />
+          </label>
+
+          <label class="field">
+            <span class="field__label" data-i18n="contact.email">Email</span>
+            <input class="field__input" type="email" name="email" autocomplete="email" required />
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label" data-i18n="contact.package">Package</span>
+            <select class="field__input" name="package" required>
+              <option value="" selected disabled data-i18n="contact.packagePlaceholder">Select a package</option>
+              <option value="animation" data-i18n="contact.package1">1-minute animation (from €1000)</option>
+              <option value="branding" data-i18n="contact.package2">Branding (from €2000)</option>
+              <option value="uxui" data-i18n="contact.package3">UX/UI analysis (from €2000)</option>
+            </select>
+          </label>
+
+          <label class="field field--full">
+            <span class="field__label" data-i18n="contact.message">Message</span>
+            <textarea class="field__input field__textarea" name="message" rows="6" required
+              data-i18n-placeholder="contact.messagePlaceholder"
+              placeholder="Tell me about your project, timeline, and any links/materials."></textarea>
+          </label>
+        </div>
+
+        <div class="contact-actions">
+          <button class="button" type="submit" data-i18n="contact.submit">Send</button>
+
+          <a class="button button--secondary"
+             href="mailto:contact@noabvld.com?subject=Project%20inquiry%20-%20Packages&body=Hi%20Noa,%0A%0AI%27m%20interested%20in%20the%20following%20package:%20%0A%0A-%20%0A%0AProject%20details:%0A%0A-%20%0A%0AThanks!"
+             data-i18n="contact.emailCta">
+            Email instead
+          </a>
+        </div>
+
+        <p class="packages-contact__note" data-i18n="contact.note">
+          If you want the form to actually deliver submissions, tell me if you’re using Cloudflare Pages (Forms) or another service.
+        </p>
+      </form>
+    </section>
+
+    <section id="process" class="packages-process" aria-labelledby="process-title">
+      <h2 id="process-title" data-i18n="process.title">How I work</h2>
+      <p class="packages-process__lead" data-i18n="process.lead">
+        I aim to make the process seamless and worry-free with clear feedback moments so we stay on track — both for your needs and timeline.
+      </p>
+
+      <ol class="process-steps">
+        <li class="process-step">
+          <h3 class="process-step__title" data-i18n="process.s1.title">Understanding your need</h3>
+          <p class="process-step__desc" data-i18n="process.s1.desc">
+            We align on goals, audience, constraints, and success criteria so we can move fast with clarity.
+          </p>
+        </li>
+
+        <li class="process-step">
+          <h3 class="process-step__title" data-i18n="process.s2.title">Concept creation + feedback</h3>
+          <p class="process-step__desc" data-i18n="process.s2.desc">
+            I create concepts and present them at a set feedback moment. Together we choose the best direction.
+          </p>
+        </li>
+
+        <li class="process-step">
+          <h3 class="process-step__title" data-i18n="process.s3.title">Finalisation + feedback</h3>
+          <p class="process-step__desc" data-i18n="process.s3.desc">
+            I refine and finalise the deliverables, followed by a final feedback moment to ensure everything is polished and ready.
+          </p>
+        </li>
+      </ol>
+
+      <div class="process-cta">
+        <a class="button" href="#contact" data-i18n="process.cta">Start a project</a>
+      </div>
+    </section>
+
+    <footer class="packages-footer">
+      <small>© <span id="year"></span> Noa Barneveld</small>
+    </footer>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        "nav.packages": "Packages",
+        "nav.contact": "Contact",
+        "nav.process": "How I work",
+
+        "intro.title": "Hi, I'm Noa!",
+        "intro.subtitle": "I'm a creative person with a critical eye. I look at where you get stuck and use animation, design, and user experience design to help you communicate information clearly and enjoyably.",
+        "hero.title": "Packages",
+        "hero.subtitle": "Getting started is often the hardest part, to make it easier I've curated a selection of packages for you. Take a look at the options below, see my sample work and let's get started!",
+
+        "hero.ctaPrimary": "Contact",
+        "hero.ctaSecondary": "How I work",
+
+        "p1.title": "1-minute animation",
+        "p1.price": "From €1000",
+        "p1.desc": "Ideal for keynote openings, explainer videos, and social media.",
+        "p1.b1": "1-minute 2D animation",
+        "p1.b2": "Optimized for your channel (keynote / web / social)",
+        "p1.b3": "From storyboard to MP4 delivery",
+
+        "p2.title": "Branding project",
+        "p2.price": "From €2000",
+        "p2.desc": "A clear visual identity to make your brand consistent and recognizable.",
+        "p2.b1": "Logo design",
+        "p2.b2": "Styleguide (incl. colours and fonts)",
+        "p2.b3": "Two decorative design elements",
+
+        "p3.title": "UX/UI analysis",
+        "p3.price": "From €2000",
+        "p3.desc": "Analysis of your app or website including advice for improvements and design suggestions.",
+        "p3.b1": "UX/UI audit of an app or website",
+        "p3.b2": "Actionable advice for improvements",
+        "p3.b3": "Design suggestions (where helpful)",
+
+        "p.contactCta": "Choose this package",
+        "p.sampleCta": "Sample work",
+
+        "contact.title": "Contact",
+        "contact.desc": "Send a message with your preferred package and some context. I’ll reply with next steps.",
+        "contact.name": "Name",
+        "contact.email": "Email",
+        "contact.package": "Package",
+        "contact.packagePlaceholder": "Select a package",
+        "contact.package1": "1-minute animation (from €1000)",
+        "contact.package2": "Branding (from €2000)",
+        "contact.package3": "UX/UI analysis (from €2000)",
+        "contact.message": "Message",
+        "contact.messagePlaceholder": "Tell me about your project, timeline, and any links/materials.",
+        "contact.submit": "Send",
+        "contact.emailCta": "Email instead",
+        // "contact.note": "If you want the form to actually deliver submissions, tell me if you’re using Cloudflare Pages (Forms) or another service.",
+
+        "process.title": "How I work",
+        "process.lead": "I aim to make the process seamless and worry-free with clear feedback moments so we stay on track according to both your needs and timeline.",
+        "process.s1.title": "Understanding your need",
+        "process.s1.desc": "We align on goals, audience, constraints, and success criteria so we can move fast with clarity.",
+        "process.s2.title": "Concept creation",
+        "process.s2.desc": "I create concepts and present them at a set feedback moment. Together we choose the best direction.",
+        "process.s3.title": "Finalisation",
+        "process.s3.desc": "I refine and finalise the deliverables, followed by a final feedback moment to ensure everything is polished and ready.",
+        "process.cta": "Start a project"
+      },
+
+      nl: {
+        "nav.packages": "Pakketten",
+        "nav.contact": "Contact",
+        "nav.process": "Hoe ik werk",
+
+        "intro.title": "Hoi, ik ben Noa!",
+        "intro.subtitle": "Een creatieveling met een kritische blik, ik kijk mee naar waar jij vastloopt en help je d.m.v. animatie, design en webdesign hoe ik je kan helpen informatie helder en leuk te communiceren",
+
+        "hero.title": "Pakketten",
+        "hero.subtitle": "Beginnen is vaak het moeilijkste deel. Om het gemakkelijker te maken, heb ik een selectie van pakketten voor u samengesteld. Bekijk de onderstaande opties, bekijk mijn voorbeeldwerk en laten we aan de slag gaan!",
+        "hero.ctaPrimary": "Contact",
+        "hero.ctaSecondary": "Hoe ik werk",
+
+        "p1.title": "1-minuut animatie",
+        "p1.price": "Vanaf €1000",
+        "p1.desc": "Ideaal voor keynote-openers, explainer video’s en social media.",
+        "p1.b1": "1 minuut 2D animatie",
+        "p1.b2": "Geoptimaliseerd voor kanaal (keynote / web / social)",
+        "p1.b3": "Van storyboard naar mp4 levering",
+
+        "p2.title": "Branding project",
+        "p2.price": "Vanaf €2000",
+        "p2.desc": "Een heldere visuele identiteit zodat je merk consistent en herkenbaar wordt.",
+        "p2.b1": "Logo ontwerp",
+        "p2.b2": "Styleguide (incl. kleuren en fonts)",
+        "p2.b3": "Twee decoratieve design elementen",
+
+        "p3.title": "UX/UI analyse",
+        "p3.price": "Vanaf €2000",
+        "p3.desc": "Analyse van je app of website incl. advies voor verbeteringen en ontwerpvoorstellen.",
+        "p3.b1": "UX/UI audit van app of website",
+        "p3.b2": "Concrete verbeterpunten (actiegericht)",
+        "p3.b3": "Ontwerpvoorstellen (waar nodig)",
+
+        "p.contactCta": "Dit pakket kiezen",
+        "p.sampleCta": "Voorbeeldwerk",
+
+        "contact.title": "Contact",
+        "contact.desc": "Stuur een bericht met het pakket dat je wilt en wat context. Ik reageer met de vervolgstappen.",
+        "contact.name": "Naam",
+        "contact.email": "E-mail",
+        "contact.package": "Pakket",
+        "contact.packagePlaceholder": "Kies een pakket",
+        "contact.package1": "1-minuut animatie (vanaf €1000)",
+        "contact.package2": "Branding (vanaf €2000)",
+        "contact.package3": "UX/UI analyse (vanaf €2000)",
+        "contact.message": "Bericht",
+        "contact.messagePlaceholder": "Vertel kort over je project, planning en eventuele links/materiaal.",
+        "contact.submit": "Verstuur",
+        "contact.emailCta": "Mail liever",
+        // "contact.note": "Wil je dat dit formulier écht berichten verstuurt? Laat me weten of je Cloudflare Pages (Forms) gebruikt of een andere service.",
+
+        "process.title": "Hoe ik werk",
+        "process.lead": "Ik maak het proces zo soepel en zorgeloos mogelijk met vaste feedbackmomenten, zodat we inhoudelijk én qua planning op koers blijven.",
+        "process.s1.title": "Jouw behoefte begrijpen",
+        "process.s1.desc": "We stemmen doelen, doelgroep, randvoorwaarden en succescriteria af zodat we snel en helder kunnen werken.",
+        "process.s2.title": "Concept creëren",
+        "process.s2.desc": "Ik maak concepten en presenteer die op een vast feedbackmoment. Samen kiezen we de beste richting.",
+        "process.s3.title": "Afronding",
+        "process.s3.desc": "Ik werk alles uit en rond de deliverables af, met een laatste feedbackmoment zodat alles strak en klaar is voor gebruik.",
+        "process.cta": "Start een project"
+      }
+    };
+
+    const yearEl = document.getElementById("year");
+    yearEl.textContent = new Date().getFullYear();
+
+    const buttons = document.querySelectorAll(".lang-toggle__btn");
+
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem("lang", lang);
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const value = translations[lang]?.[key];
+        if (value) el.textContent = value;
+      });
+
+      // placeholders
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        const value = translations[lang]?.[key];
+        if (value) el.setAttribute("placeholder", value);
+      });
+
+      // select placeholder option text
+      const placeholderOption = document.querySelector('select[name="package"] option[disabled]');
+      if (placeholderOption) {
+        const key = placeholderOption.getAttribute("data-i18n");
+        const value = translations[lang]?.[key];
+        if (value) placeholderOption.textContent = value;
+      }
+
+      buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    }
+
+    // Default: stored choice -> browser language -> EN
+    const stored = localStorage.getItem("lang");
+    const browser = (navigator.language || "en").toLowerCase().startsWith("nl") ? "nl" : "en";
+    applyLanguage(stored || browser);
+    buttons.forEach((btn) => btn.addEventListener("click", () => applyLanguage(btn.dataset.lang)));
+
+  </script>
+</body>
+</html>
