@@ -153,6 +153,7 @@
 .field__label {
   font-size: 0.95rem;
   color: rgba(34,34,34,0.8);
+  text-align: left;
 }
 
 .field__input {
@@ -167,6 +168,10 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+.field__input::placeholder {
+  color: rgba(34,34,34,0.4);
 }
 
 select.field__input {
