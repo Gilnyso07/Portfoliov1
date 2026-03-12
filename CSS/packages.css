@@ -287,7 +287,7 @@ body.modal-open {
 
 @media (max-width: 900px) {
   .package-card__actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .modal-content {
