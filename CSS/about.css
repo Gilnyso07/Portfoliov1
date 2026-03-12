@@ -9,6 +9,7 @@
 /* Spacing tweaks for About section */
 .about .title {
   margin-bottom: 1rem; /* space between heading and text */
+  color: var(--accent2);
 }
 
 .about p {

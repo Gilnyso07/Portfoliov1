@@ -19,6 +19,12 @@
   transform: scale(1.05);
 }
 
+.button:focus,
+.button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 /* Use Material Symbols icon for external links */
 .material-symbols-outlined {
   font-variation-settings:

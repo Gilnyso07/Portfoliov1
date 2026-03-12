@@ -53,8 +53,11 @@
 }
 
 .contact-icon {
-  width: 200px;    /* adjust size to fit your design */
-  height: auto;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  object-position: left center;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -64,6 +67,8 @@
     gap: 32px;
   }
   .contact-icon {
-    width: 180px;    /* adjust size for smaller screens */
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
   }
 }

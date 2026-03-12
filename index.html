@@ -11,6 +11,9 @@
 
 <body>
 
+  <a class="logo-text" href="/" aria-label="Home">
+    <img src="Images/Header/LogoRedBlue.png" alt="BVLD logo" />
+  </a>
   <header>
     <!--
       <a href="/" class="logo logo--fixed" aria-label="Noa Barneveld home">
@@ -18,19 +21,28 @@
         </a>
     -->
     <nav>
-      <a href="#work">work</a>
-      <a href="#about">about</a>
-      <a href="#contact">contact</a>
+      <a href="#work" data-i18n="nav.work">work</a>
+      <a href="#packages" data-i18n="nav.packages">packages</a>
+      <a href="#about" data-i18n="nav.about">about</a>
+      <a href="#contact" data-i18n="nav.contact">contact</a>
     </nav>
   </header>
+
+  <div class="lang-toggle" role="group" aria-label="Language toggle">
+    <button class="lang-toggle__btn" type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button class="lang-toggle__btn" type="button" data-lang="nl" aria-pressed="false">NL</button>
+  </div>
 
   </main>
     <section id="hero">
         <div class="profile-image"></div>
         <div class="intro-text">
           <!--<subtitle class="sub-title">Noa Barneveld</subtitle>-->
-          <h2 class="title">Noa Barneveld</h2>
-          <h3>Multidisciplinary designer simplifying complex processes and products using creative power</h3>
+          <h2 class="title" data-i18n="hero.title">Noa Barneveld</h2>
+          <h3 data-i18n="hero.subtitle">Strategic designer solving problems using creative power.</h3>
+          <div class="hero-actions">
+            <a class="button" href="#packages" data-i18n="hero.cta">See my packages</a>
+          </div>
         </div>
     </section>
 
@@ -79,12 +91,12 @@
 
    <section id="work" class="gallery">
     <div class="filter-bar" aria-label="Filter work by discipline">
-      <button class="filter-btn is-active" data-filter="all">All work</button>
-      <button class="filter-btn" data-filter="graphic">Graphic design</button>
-      <button class="filter-btn" data-filter="motion">Motion design</button>
-      <button class="filter-btn" data-filter="uxui">UX/UI</button>
-      <button class="filter-btn" data-filter="research">Research</button>
-      <button class="filter-btn" data-filter="xr">XR</button>
+      <button class="filter-btn is-active" data-filter="all" data-i18n="filter.all">All work</button>
+      <button class="filter-btn" data-filter="graphic" data-i18n="filter.graphic">Graphic design</button>
+      <button class="filter-btn" data-filter="motion" data-i18n="filter.motion">Motion design</button>
+      <button class="filter-btn" data-filter="uxui" data-i18n="filter.uxui">UX/UI</button>
+      <button class="filter-btn" data-filter="research" data-i18n="filter.research">Research</button>
+      <button class="filter-btn" data-filter="xr" data-i18n="filter.xr">XR</button>
     </div>
     <div class="gallery-grid"></div>
 
@@ -136,6 +148,101 @@
     </script>
   </section>
 
+  <section id="packages" class="packages-heading" aria-labelledby="packages-title">
+    <h2 id="packages-title" class="title" data-i18n="packages.title">Packages</h2>
+    <p class="packages-lead" data-i18n="packages.lead">
+      Getting started is often the hardest part, so I make it easier with clear packages and examples of past work.
+    </p>
+  </section>
+
+  <section class="packages-grid" aria-label="Package options">
+    <article class="package-card">
+      <div class="package-card__top">
+        <h2 class="package-card__title" data-i18n="p1.title">1-minute animation</h2>
+        <p class="package-card__price" data-i18n="p1.price">From €1000</p>
+      </div>
+      <p class="package-card__desc" data-i18n="p1.desc">
+        Ideal for keynote openings, explainer videos, and social media.
+      </p>
+
+      <ul class="package-card__list">
+        <li data-i18n="p1.b1">1-minute motion piece (concept → delivery)</li>
+        <li data-i18n="p1.b2">Optimized for your channel (keynote / web / social)</li>
+        <li data-i18n="p1.b3">Delivery in high-quality MP4</li>
+      </ul>
+
+      <div class="package-card__actions">
+        <a class="button package-card__btn js-choose-package" href="#contact" data-package="animation" data-i18n="p.contactCta">Choose this package</a>
+        <a class="button button--secondary package-card__btn js-sample-work" href="https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD" data-project="https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD" data-i18n="p.sampleCta">View past project</a>
+      </div>
+    </article>
+
+    <article class="package-card package-card--featured" aria-label="Branding package">
+      <div class="package-card__top">
+        <h2 class="package-card__title" data-i18n="p2.title">Branding project</h2>
+        <p class="package-card__price" data-i18n="p2.price">From €2000</p>
+      </div>
+      <p class="package-card__desc" data-i18n="p2.desc">
+        A clear visual identity to make your brand consistent and recognizable.
+      </p>
+
+      <ul class="package-card__list">
+        <li data-i18n="p2.b1">Logo design</li>
+        <li data-i18n="p2.b2">Styleguide (incl. colours)</li>
+        <li data-i18n="p2.b3">2 design elements + font selection</li>
+      </ul>
+
+      <div class="package-card__actions">
+        <a class="button package-card__btn js-choose-package" href="#contact" data-package="branding" data-i18n="p.contactCta">Choose this package</a>
+        <a class="button button--secondary package-card__btn js-sample-work" href="/PDFs/InteractionLabPortfolio.pdf" data-project="/PDFs/InteractionLabPortfolio.pdf" data-i18n="p.sampleCta">View past project</a>
+      </div>
+    </article>
+
+    <article class="package-card">
+      <div class="package-card__top">
+        <h2 class="package-card__title" data-i18n="p3.title">UX/UI analysis</h2>
+        <p class="package-card__price" data-i18n="p3.price">From €2000</p>
+      </div>
+      <p class="package-card__desc" data-i18n="p3.desc">
+        Analysis of your app or website including advice and design suggestions for improvements and design.
+      </p>
+
+      <ul class="package-card__list">
+        <li data-i18n="p3.b1">UX/UI audit of an app or website</li>
+        <li data-i18n="p3.b2">Actionable advice for improvements</li>
+        <li data-i18n="p3.b3">Design suggestions (where helpful)</li>
+      </ul>
+
+      <div class="package-card__actions">
+        <a class="button package-card__btn js-choose-package" href="#contact" data-package="uxui" data-i18n="p.contactCta">Choose this package</a>
+        <a class="button button--secondary package-card__btn js-sample-work" href="/PDFs/BilldB2B-Slides.pdf" data-project="/PDFs/BilldB2B-Slides.pdf" data-i18n="p.sampleCta">View past project</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="about">
+    <h2 class="title" data-i18n="about.title">A little bit more about me</h2>
+    <p data-i18n="about.desc">I bring academic and professional experience in design and technology and an adventurous multicultural personality:</p>
+
+    <div class="about-gallery">
+      <div class="about-item">
+        <img src="Images/About/Mountainlover.png" alt="Mountain lover" class="about-image" />
+        <p class="caption" data-i18n="about.mountain">Mountain lover</p>
+      </div>
+
+      <div class="about-item">
+        <img src="Images/About/Coldwaterswimmer.png" alt="Cold water swimmer" class="about-image" />
+        <p class="caption" data-i18n="about.cold">Cold water swimmer</p>
+      </div>
+
+      <div class="about-item">
+        <img src="Images/About/Explorer.png" alt="Explorer" class="about-image" />
+        <p class="caption" data-i18n="about.explorer">Explorer</p>
+      </div>
+    </div>
+  </section>
+
     <!-- ===== Modal Overlay ===== -->
   <div id="projectModal" class="modal">
     <div class="modal-content">
@@ -152,6 +259,8 @@
     const closeBtn = document.querySelector('.modal-close');
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const sampleButtons = document.querySelectorAll('.js-sample-work');
+    const chooseButtons = document.querySelectorAll('.js-choose-package');
 
     function getScrollbarWidth(){
       return window.innerWidth - document.documentElement.clientWidth;
@@ -211,6 +320,36 @@
       });
     });
 
+    sampleButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const link = button.dataset.project;
+        if (link) {
+          document.getElementById("pdf-loader").style.display = "block";
+          modal.style.display = 'flex';
+          document.body.classList.add('modal-open');
+          if (link.includes("youtube.com") || link.includes("youtu.be")) {
+            const youtubeEmbed = link
+              .replace("watch?v=", "embed/")
+              .replace("youtu.be/", "www.youtube.com/embed/");
+            iframe.src = youtubeEmbed;
+          } else {
+            iframe.src = link;
+          }
+        }
+      });
+    });
+
+    chooseButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.package;
+        const select = document.querySelector('select[name="package"]');
+        if (select && value) {
+          select.value = value;
+        }
+      });
+    });
+
     iframe.addEventListener("load", () => {
       setTimeout(() => {
         document.getElementById("pdf-loader").style.display = "none";
@@ -218,50 +357,50 @@
     });
   </script>
 
-<!-- ===== About ===== -->
-<section id="about" class="about">
-  <h2 class="title">A little bit more about me</h2>
-  <p>I bring academic and professional experience in design and technology and an adventurous multicultural personality:</p>
-
-  <div class="about-gallery">
-    <div class="about-item">
-      <img src="Images/About/Mountainlover.png" alt="Mountain lover" class="about-image" />   
-      <p class="caption">Mountain lover</p>
-    </div>
-
-    <div class="about-item">
-      <img src="Images/About/Coldwaterswimmer.png" alt="Cold water swimmer" class="about-image" />
-      <p class="caption">Cold water swimmer</p>
-    </div>
-
-    <div class="about-item">
-      <img src="Images/About/Explorer.png" alt="Explorer" class="about-image" />
-      <p class="caption">Explorer</p>
-    </div>
-  </div>
-
-  <!--      <a href="PDFs/CV2025v5.pdf" target="_blank" class="button">
-      See my CV <span class="material-symbols-outlined">open_in_new</span>
-    </a>
-
-  <div class="about-item">
-      <img src="Images/About/Map.png" alt="Map" class="about-map" />
-    <p class="caption">Grew up and studied across Europe</p>
-  </div>
--->
-</section>
-
 <!-- ===== Contact ===== -->
 <section id="contact" class="about">
-  <h2 class="title">Get in touch</h2>
-  <p>If you'd like to discuss a project, collaboration, or just want to say hello, feel free to reach out!</p>
+  <h2 class="title" data-i18n="contact.title">Get in touch</h2>
+  <p data-i18n="contact.desc">If you'd like to discuss a project, collaboration, or just want to say hello, feel free to reach out!</p>
+
+  <form class="contact-form" method="post" action="https://formspree.io/f/mqedrvoq">
+    <div class="contact-form__grid">
+      <label class="field">
+        <span class="field__label" data-i18n="contact.name">Name</span>
+        <input class="field__input" type="text" name="name" autocomplete="name" required />
+      </label>
+
+      <label class="field">
+        <span class="field__label" data-i18n="contact.email">Email</span>
+        <input class="field__input" type="email" name="email" autocomplete="email" required />
+      </label>
+
+      <label class="field field--full">
+        <span class="field__label" data-i18n="contact.package">Package</span>
+        <select class="field__input" name="package">
+          <option value="" selected disabled data-i18n="contact.packagePlaceholder">Select a package</option>
+          <option value="animation" data-i18n="contact.package1">1-minute animation (from €1000)</option>
+          <option value="branding" data-i18n="contact.package2">Branding (from €2000)</option>
+          <option value="uxui" data-i18n="contact.package3">UX/UI analysis (from €2000)</option>
+        </select>
+      </label>
+
+      <label class="field field--full">
+        <span class="field__label" data-i18n="contact.message">Message</span>
+        <textarea class="field__input field__textarea" name="message" rows="6" required
+          data-i18n-placeholder="contact.messagePlaceholder"
+          placeholder="Tell me about your project, timeline, and any links/materials."></textarea>
+      </label>
+    </div>
+
+    <div class="contact-actions">
+      <button class="button" type="submit" data-i18n="contact.submit">Send</button>
+    </div>
+  </form>
+
   <div class="contact-buttons">
       <a href="https://www.linkedin.com/in/noabarneveld/" target="_blank" class="contact-button">
       <img src="Images/Contact/LinkedIn.png" alt="LinkedIn" class="contact-icon" />
    </a>
-    <a href="mailto:contact@noajoan.com" class="contact-button">
-      <img src="Images/Contact/Email.png" alt="Email" class="contact-icon" />   
-    </a>
   </div>
 </section>
 
@@ -269,5 +408,145 @@
     <p>© 2025 Noa Barneveld</p>
   </footer>
   
+  <script>
+    const translations = {
+      en: {
+        "nav.work": "work",
+        "nav.packages": "packages",
+        "nav.about": "about",
+        "nav.contact": "contact",
+        "hero.title": "Noa Barneveld",
+        "hero.subtitle": "Strategic designer solving problems using creative power.",
+        "hero.cta": "See my packages",
+        "packages.title": "Packages",
+        "packages.lead": "Getting started is often the hardest part, so I make it easier with clear packages and examples of past work.",
+        "filter.all": "All work",
+        "filter.graphic": "Graphic design",
+        "filter.motion": "Motion design",
+        "filter.uxui": "UX/UI",
+        "filter.research": "Research",
+        "filter.xr": "XR",
+        "p1.title": "1-minute animation",
+        "p1.price": "From €1000",
+        "p1.desc": "Ideal for keynote openings, explainer videos, and social media.",
+        "p1.b1": "1-minute motion piece (concept → delivery)",
+        "p1.b2": "Optimized for your channel (keynote / web / social)",
+        "p1.b3": "Delivery in high-quality MP4",
+        "p2.title": "Branding project",
+        "p2.price": "From €2000",
+        "p2.desc": "A clear visual identity to make your brand consistent and recognizable.",
+        "p2.b1": "Logo design",
+        "p2.b2": "Styleguide (incl. colours)",
+        "p2.b3": "2 design elements + font selection",
+        "p3.title": "UX/UI analysis",
+        "p3.price": "From €2000",
+        "p3.desc": "Analysis of your app or website including advice and design suggestions for improvements and design.",
+        "p3.b1": "UX/UI audit of an app or website",
+        "p3.b2": "Actionable advice for improvements",
+        "p3.b3": "Design suggestions (where helpful)",
+        "p.contactCta": "Choose this package",
+        "p.sampleCta": "View past project",
+        "about.title": "A little bit more about me",
+        "about.desc": "I bring academic and professional experience in design and technology and an adventurous multicultural personality:",
+        "about.mountain": "Mountain lover",
+        "about.cold": "Cold water swimmer",
+        "about.explorer": "Explorer",
+        "contact.title": "Get in touch",
+        "contact.desc": "If you'd like to discuss a project, collaboration, or just want to say hello, feel free to reach out!",
+        "contact.name": "Name",
+        "contact.email": "Email",
+        "contact.package": "Package",
+        "contact.packagePlaceholder": "Select a package",
+        "contact.package1": "1-minute animation (from €1000)",
+        "contact.package2": "Branding (from €2000)",
+        "contact.package3": "UX/UI analysis (from €2000)",
+        "contact.message": "Message",
+        "contact.messagePlaceholder": "Tell me about your project, timeline, and any links/materials.",
+        "contact.submit": "Send"
+      },
+      nl: {
+        "nav.work": "werk",
+        "nav.packages": "pakketten",
+        "nav.about": "over mij",
+        "nav.contact": "contact",
+        "hero.title": "Noa Barneveld",
+        "hero.subtitle": "Strategisch designer die problemen oplost met creatieve kracht.",
+        "hero.cta": "Bekijk mijn pakketten",
+        "packages.title": "Pakketten",
+        "packages.lead": "Beginnen is vaak het moeilijkst, daarom maak ik het makkelijker met heldere pakketten en voorbeelden van eerder werk.",
+        "filter.all": "Alle werk",
+        "filter.graphic": "Grafisch ontwerp",
+        "filter.motion": "Motion design",
+        "filter.uxui": "UX/UI",
+        "filter.research": "Onderzoek",
+        "filter.xr": "XR",
+        "p1.title": "1-minuut animatie",
+        "p1.price": "Vanaf €1000",
+        "p1.desc": "Ideaal voor keynote-openers, explainer video’s en social media.",
+        "p1.b1": "1 minuut motion (concept → oplevering)",
+        "p1.b2": "Geoptimaliseerd voor kanaal (keynote / web / social)",
+        "p1.b3": "Oplevering als MP4 in hoge kwaliteit",
+        "p2.title": "Branding project",
+        "p2.price": "Vanaf €2000",
+        "p2.desc": "Een heldere visuele identiteit zodat je merk consistent en herkenbaar wordt.",
+        "p2.b1": "Logo ontwerp",
+        "p2.b2": "Styleguide (incl. kleuren)",
+        "p2.b3": "2 design elementen + fontkeuze",
+        "p3.title": "UX/UI analyse",
+        "p3.price": "Vanaf €2000",
+        "p3.desc": "Analyse van je app of website incl. advies voor verbeteringen en ontwerpvoorstellen.",
+        "p3.b1": "UX/UI audit van app of website",
+        "p3.b2": "Concrete verbeterpunten (actiegericht)",
+        "p3.b3": "Ontwerpvoorstellen (waar nodig)",
+        "p.contactCta": "Dit pakket kiezen",
+        "p.sampleCta": "Bekijk vorig project",
+        "about.title": "Nog iets meer over mij",
+        "about.desc": "Ik breng academische en professionele ervaring in design en technologie, en een avontuurlijke multiculturele persoonlijkheid:",
+        "about.mountain": "Bergliefhebber",
+        "about.cold": "Koudwaterzwemmer",
+        "about.explorer": "Ontdekker",
+        "contact.title": "Neem contact op",
+        "contact.desc": "Wil je een project bespreken, samenwerken, of gewoon hallo zeggen? Stuur gerust een bericht!",
+        "contact.name": "Naam",
+        "contact.email": "E-mail",
+        "contact.package": "Pakket",
+        "contact.packagePlaceholder": "Kies een pakket",
+        "contact.package1": "1-minuut animatie (vanaf €1000)",
+        "contact.package2": "Branding (vanaf €2000)",
+        "contact.package3": "UX/UI analyse (vanaf €2000)",
+        "contact.message": "Bericht",
+        "contact.messagePlaceholder": "Vertel kort over je project, planning en eventuele links/materiaal.",
+        "contact.submit": "Verstuur"
+      }
+    };
+
+    const buttons = document.querySelectorAll(".lang-toggle__btn");
+    function applyLanguage(lang) {
+      document.documentElement.lang = lang;
+      localStorage.setItem("lang", lang);
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        const value = translations[lang]?.[key];
+        if (value) el.textContent = value;
+      });
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-placeholder");
+        const value = translations[lang]?.[key];
+        if (value) el.setAttribute("placeholder", value);
+      });
+      const placeholderOption = document.querySelector('select[name="package"] option[disabled]');
+      if (placeholderOption) {
+        const key = placeholderOption.getAttribute("data-i18n");
+        const value = translations[lang]?.[key];
+        if (value) placeholderOption.textContent = value;
+      }
+      buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    }
+
+    const stored = localStorage.getItem("lang");
+    const browser = (navigator.language || "en").toLowerCase().startsWith("nl") ? "nl" : "en";
+    applyLanguage(stored || browser);
+    buttons.forEach((btn) => btn.addEventListener("click", () => applyLanguage(btn.dataset.lang)));
+  </script>
 </body>
 </html>
