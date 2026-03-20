@@ -105,24 +105,28 @@
       const folder = 'Images/Masonry gallery v1';
 
       const workItems = [
-        { file: 'image1.png', overlay: 'B2B App Onboarding Screens', project: 'PDFs/BilldB2B-Slides.pdf', categories: ['uxui', 'research'] },
-        { file: 'image2.png', overlay: 'StudentAlpha Social Media', project: 'PDFs/StudentAlpha.pdf', categories: ['graphic'] },
+        { file: 'image1.png', overlay: { en: 'Smooth onboarding for B2B SaaS', nl: 'Soepele onboarding voor B2B SaaS' }, project: 'PDFs/BilldB2B-Slides.pdf', categories: ['uxui', 'research'] },
+        { file: 'image2.png', overlay: { en: 'Intriguing social media event promotion', nl: 'Intrigerende social media promotie voor evenementen' }, project: 'PDFs/StudentAlpha.pdf', categories: ['graphic'] },
         { file: 'image3.png', overlay: 'TIG text', project: '', categories: [''] },
-        { file: 'image4.png', overlay: 'Illustrations', project: 'PDFs/Illustrations.pdf', categories: ['graphic'] },
-        { file: 'image5.png', overlay: 'Nationaal Archief VR Experience', project: 'PDFs/NationalArchive.pdf', categories: ['xr'] },
-        { file: 'image6.png', overlay: 'Tool for Low Health Literacy', project: 'PDFs/Thesis.pdf', categories: ['research', 'uxui'] },
+        { file: 'image4.png', overlay: { en: 'Hand-drawn illustrations', nl: 'Handgetekende illustraties' }, project: 'PDFs/Illustrations.pdf', categories: ['graphic'] },
+        { file: 'image5.png', overlay: { en: 'Bringing life to Curacao\'s history through VR', nl: 'Curacao\'s geschiedenis tot leven brengen met VR' }, project: 'PDFs/NationalArchive.pdf', categories: ['xr'] },
+        { file: 'image6.png', overlay: { en: 'Type 2 diabetes lifestyle change for low literacy', nl: 'Diabetes type 2 lefstijlverandering voor laaggeletterde' }, project: 'PDFs/Thesis.pdf', categories: ['research', 'uxui'] },
         { file: 'image7.png', overlay: 'ESA text', project: '', categories: [''] },
-        { file: 'image8.png', overlay: 'InteractionLab Branding', project: 'PDFs/InteractionLabPortfolio.pdf', categories: ['graphic'] },
-        { file: 'image9.png', overlay: 'DocuWiki UI/UX', project: 'PDFs/DocuWiki.pdf', categories: ['uxui'] },
+        { file: 'image8.png', overlay: { en: 'Strengthening lab identity through printed and social media', nl: 'Lab identiteit versterken via print en social media' }, project: 'PDFs/InteractionLabPortfolio.pdf', categories: ['graphic'] },
+        { file: 'image9.png', overlay: { en: 'Making documentation discoverability effortless', nl: 'Documentatie moeiteloos vindbaar maken' }, project: 'PDFs/DocuWiki.pdf', categories: ['uxui'] },
         { file: 'image10.png', overlay: 'Jimmy text', project: '', categories: [''] },
-        { file: 'image11.png', overlay: 'PickWise UI/UX', project: 'PDFs/PickWise.pdf', categories: ['uxui'] },
-        { file: 'image12.png', overlay: 'Motion Graphics Showreel', project: 'https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD', categories: ['motion'] },
-        { file: 'image13.png', overlay: 'Mascot Design', project: 'PDFs/BilldMascot.pdf', categories: ['graphic'] },
-        { file: 'image14.png', overlay: 'MusicAll UI/UX', project: 'PDFs/MusicAll.pdf', categories: ['uxui'] },
+        { file: 'image11.png', overlay: { en: 'Helping you pick products wisely', nl: 'Je helpen producten verstandig te kiezen' }, project: 'PDFs/PickWise.pdf', categories: ['uxui'] },
+        { file: 'image12.png', overlay: { en: 'Animations showreel', nl: 'Animaties showreel' }, project: 'https://youtu.be/b27ymQx9td8?si=LZ84PtKpd40PHFhD', categories: ['motion'] },
+        { file: 'image13.png', overlay: { en: 'Authentic mascot development for FinTech startup', nl: 'Authentieke mascotte ontwikkeling voor FinTech StartUp' }, project: 'PDFs/BilldMascot.pdf', categories: ['graphic'] },
+        { file: 'image14.png', overlay: { en: 'Increase sign-ups through home-page redesign', nl: 'Meer aanmeldingen door homepage-herontwerp' }, project: 'PDFs/MusicAll.pdf', categories: ['uxui'] },
         { file: 'image15.png', overlay: 'Houtisprachtig', project: '', categories: [''] },
-        { file: 'image16.png', overlay: 'Twente Canal Workshop', project: 'PDFs/Twentekanaal.pdf', categories: ['research'] },
-        { file: 'image17.png', overlay: 'GreenHub Twente Animation', project: 'PDFs/GreenHub.pdf', categories: ['motion'] }
+        { file: 'image16.png', overlay: { en: 'Workshop to foster communication to tackle a wicked problem', nl: 'Workshop om communicatie te bevorderen bij een wicked problem' }, project: 'PDFs/Twentekanaal.pdf', categories: ['research'] },
+        { file: 'image17.png', overlay: { en: 'Increase waste separation awareness', nl: 'Bewustwording van afvalscheiding vergroten' }, project: 'PDFs/GreenHub.pdf', categories: ['motion'] }
       ];
+
+      function getOverlayText(item, lang) {
+        return typeof item.overlay === 'string' ? item.overlay : item.overlay?.[lang] || item.overlay?.en || '';
+      }
 
       workItems.forEach((item, index) => {
         const link = document.createElement('a');
@@ -133,18 +137,36 @@
 
         const img = document.createElement('img');
         img.src = `${folder}/${item.file}`;
-        img.alt = item.overlay || `Gallery image ${index + 1}`;
+        img.alt = getOverlayText(item, document.documentElement.lang || 'en') || `Gallery image ${index + 1}`;
         link.appendChild(img);
 
-        if (item.overlay) {
+        const overlayLabel = getOverlayText(item, document.documentElement.lang || 'en');
+        if (overlayLabel) {
           const overlayText = document.createElement('span');
           overlayText.className = 'overlay-text';
-          overlayText.textContent = item.overlay;
+          overlayText.textContent = overlayLabel;
           link.appendChild(overlayText);
         }
 
         galleryGrid.appendChild(link);
       });
+
+      function updateWorkItemsLanguage(lang) {
+        document.querySelectorAll('.gallery-item').forEach((itemEl, index) => {
+          const item = workItems[index];
+          const overlayLabel = getOverlayText(item, lang);
+          const img = itemEl.querySelector('img');
+          const overlayText = itemEl.querySelector('.overlay-text');
+
+          if (img) {
+            img.alt = overlayLabel || `Gallery image ${index + 1}`;
+          }
+
+          if (overlayText) {
+            overlayText.textContent = overlayLabel;
+          }
+        });
+      }
     </script>
   </section>
 
@@ -529,9 +551,9 @@
     };
 
     const buttons = document.querySelectorAll(".lang-toggle__btn");
-    function applyLanguage(lang) {
-      document.documentElement.lang = lang;
-      localStorage.setItem("lang", lang);
+      function applyLanguage(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem("lang", lang);
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         const value = translations[lang]?.[key];
@@ -548,6 +570,7 @@
         const value = translations[lang]?.[key];
         if (value) placeholderOption.textContent = value;
       }
+      updateWorkItemsLanguage(lang);
       buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     }
 
