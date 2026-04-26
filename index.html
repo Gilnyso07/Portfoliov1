@@ -22,7 +22,7 @@
     -->
     <nav>
       <a href="#work" data-i18n="nav.work">work</a>
-      <a href="#packages" data-i18n="nav.packages">packages</a>
+      <a href="#packages" data-i18n="nav.packages" hidden>packages</a>
       <a href="#about" data-i18n="nav.about">about</a>
       <a href="#contact" data-i18n="nav.contact">contact</a>
     </nav>
@@ -40,7 +40,7 @@
           <!--<subtitle class="sub-title">Noa Barneveld</subtitle>-->
           <h2 class="title" data-i18n="hero.title">Noa Barneveld</h2>
           <h3 data-i18n="hero.subtitle">Strategic designer solving problems using creative power.</h3>
-          <div class="hero-actions">
+          <div class="hero-actions" hidden>
             <a class="button" href="#packages" data-i18n="hero.cta">See my packages</a>
           </div>
         </div>
@@ -128,6 +128,30 @@
         return typeof item.overlay === 'string' ? item.overlay : item.overlay?.[lang] || item.overlay?.en || '';
       }
 
+      function getSubtitleText(item, lang) {
+        const primaryCategory = item.categories.find((category) => category);
+        if (!primaryCategory) return '';
+
+        const labelMap = {
+          en: {
+            graphic: 'Graphic design',
+            motion: 'Motion design',
+            uxui: 'UX/UI',
+            research: 'Research',
+            xr: 'XR'
+          },
+          nl: {
+            graphic: 'Grafisch ontwerp',
+            motion: 'Motion design',
+            uxui: 'UX/UI',
+            research: 'Onderzoek',
+            xr: 'XR'
+          }
+        };
+
+        return labelMap[lang]?.[primaryCategory] || labelMap.en[primaryCategory] || '';
+      }
+
       workItems.forEach((item, index) => {
         const link = document.createElement('a');
         link.href = `${folder}/${item.file}`;
@@ -141,10 +165,25 @@
         link.appendChild(img);
 
         const overlayLabel = getOverlayText(item, document.documentElement.lang || 'en');
-        if (overlayLabel) {
+        const subtitleLabel = getSubtitleText(item, document.documentElement.lang || 'en');
+        if (overlayLabel || subtitleLabel) {
           const overlayText = document.createElement('span');
           overlayText.className = 'overlay-text';
-          overlayText.textContent = overlayLabel;
+
+          if (subtitleLabel) {
+            const overlaySubtitle = document.createElement('span');
+            overlaySubtitle.className = 'overlay-text__subtitle';
+            overlaySubtitle.textContent = subtitleLabel;
+            overlayText.appendChild(overlaySubtitle);
+          }
+
+          if (overlayLabel) {
+            const overlayTitle = document.createElement('span');
+            overlayTitle.className = 'overlay-text__title';
+            overlayTitle.textContent = overlayLabel;
+            overlayText.appendChild(overlayTitle);
+          }
+
           link.appendChild(overlayText);
         }
 
@@ -163,21 +202,31 @@
           }
 
           if (overlayText) {
-            overlayText.textContent = overlayLabel;
+            const overlaySubtitle = overlayText.querySelector('.overlay-text__subtitle');
+            const overlayTitle = overlayText.querySelector('.overlay-text__title');
+            const subtitleLabel = getSubtitleText(item, lang);
+
+            if (overlaySubtitle) {
+              overlaySubtitle.textContent = subtitleLabel;
+            }
+
+            if (overlayTitle) {
+              overlayTitle.textContent = overlayLabel;
+            }
           }
         });
       }
     </script>
   </section>
 
-  <section id="packages" class="packages-heading" aria-labelledby="packages-title">
+  <section id="packages" class="packages-heading" aria-labelledby="packages-title" hidden>
     <h2 id="packages-title" class="title section-title" data-i18n="packages.title">Packages</h2>
     <p class="packages-lead" data-i18n="packages.lead">
       Getting started is often the hardest part, so I make it easier with clear packages and examples of past work.
     </p>
   </section>
 
-  <section class="packages-grid" aria-label="Package options">
+  <section class="packages-grid" aria-label="Package options" hidden>
     <article class="package-card">
       <div class="package-card__top">
         <h2 class="package-card__title" data-i18n="p1.title">1-minute animation</h2>
